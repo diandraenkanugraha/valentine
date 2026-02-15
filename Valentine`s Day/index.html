@@ -3,32 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Untuk Arini Khansa Mufidah</title>
+  <title>Happy Valentine - For Arini</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
   
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            rose: {
-              deep: '#8B1538',
-              warm: '#C41E3A',
-              soft: '#E8B4B8',
-              blush: '#FADADD',
-              cream: '#FFF5EE',
+            pink: {
+              light: '#FFE4EC',
+              medium: '#FF85A1',
+              deep: '#FF3366',
             },
-            gold: {
-              soft: '#D4A574',
-              light: '#E8D5B7',
-            }
+            cream: '#FFF9F5',
           },
           fontFamily: {
-            display: ['Playfair Display', 'serif'],
-            body: ['Cormorant Garamond', 'serif'],
+            script: ['Dancing Script', 'cursive'],
+            body: ['Quicksand', 'sans-serif'],
           }
         }
       }
@@ -37,864 +32,416 @@
   
   <style>
     :root {
-      --bg: #0D0A0B;
-      --fg: #FFF5EE;
-      --muted: #A89F9A;
-      --accent: #C41E3A;
-      --accent-light: #E8B4B8;
-      --card: rgba(255, 245, 238, 0.03);
-      --border: rgba(232, 180, 184, 0.2);
-      --gold: #D4A574;
+      --bg: #FFF0F5;
+      --fg: #543D47;
+      --accent: #FF3366;
+      --accent-light: #FF85A1;
+      --card-bg: rgba(255, 255, 255, 0.9);
     }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     
     body {
-      font-family: 'Cormorant Garamond', serif;
-      background: var(--bg);
+      font-family: 'Quicksand', sans-serif;
+      background-color: var(--bg);
       color: var(--fg);
       overflow-x: hidden;
     }
-    
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: var(--bg);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--accent);
-      border-radius: 3px;
-    }
-    
-    /* Floating Hearts Animation */
-    @keyframes floatHeart {
-      0% {
-        transform: translateY(100vh) rotate(0deg) scale(0);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-        transform: translateY(90vh) rotate(15deg) scale(1);
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100px) rotate(-15deg) scale(0.5);
-        opacity: 0;
-      }
-    }
-    
-    @keyframes floatHeartAlt {
-      0% {
-        transform: translateY(100vh) rotate(0deg) scale(0);
-        opacity: 0;
-      }
-      10% {
-        opacity: 0.8;
-        transform: translateY(90vh) rotate(-20deg) scale(1);
-      }
-      90% {
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(-100px) rotate(20deg) scale(0.3);
-        opacity: 0;
-      }
-    }
-    
-    .floating-heart {
+
+    /* Background Pattern */
+    .bg-pattern {
+      background-image: radial-gradient(#FF85A1 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.2;
       position: fixed;
+      inset: 0;
+      z-index: 0;
       pointer-events: none;
-      z-index: 1;
-      will-change: transform;
     }
-    
-    .floating-heart svg {
-      filter: drop-shadow(0 0 10px currentColor);
-    }
-    
-    /* Sparkle Animation */
-    @keyframes sparkle {
-      0%, 100% {
-        transform: scale(0) rotate(0deg);
-        opacity: 0;
-      }
-      50% {
-        transform: scale(1) rotate(180deg);
-        opacity: 1;
-      }
-    }
-    
-    .sparkle {
-      position: absolute;
-      pointer-events: none;
-      animation: sparkle 2s ease-in-out infinite;
-    }
-    
-    /* Glow Effect */
-    @keyframes pulseGlow {
-      0%, 100% {
-        opacity: 0.3;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.5;
-        transform: scale(1.05);
-      }
-    }
-    
-    .glow-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      animation: pulseGlow 8s ease-in-out infinite;
-    }
-    
-    /* Text Reveal Animation */
-    @keyframes revealText {
-      from {
-        clip-path: inset(0 100% 0 0);
-      }
-      to {
-        clip-path: inset(0 0 0 0);
-      }
-    }
-    
-    .reveal-text {
-      animation: revealText 1.5s ease-out forwards;
-    }
-    
-    /* Entrance Animations */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(60px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes scaleIn {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    .animate-fade-up {
-      animation: fadeUp 1s ease-out forwards;
-    }
-    
-    .animate-scale-in {
-      animation: scaleIn 0.8s ease-out forwards;
-    }
-    
-    .animate-slide-left {
-      animation: slideInLeft 1s ease-out forwards;
-    }
-    
-    .animate-slide-right {
-      animation: slideInRight 1s ease-out forwards;
-    }
-    
-    /* Button Styles */
-    .btn-romantic {
-      position: relative;
-      background: linear-gradient(135deg, var(--accent) 0%, #8B1538 100%);
-      border: none;
-      padding: 1.25rem 3rem;
-      border-radius: 50px;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: white;
-      cursor: pointer;
-      overflow: hidden;
-      transition: all 0.4s ease;
-      box-shadow: 
-        0 10px 40px rgba(196, 30, 58, 0.3),
-        0 0 0 0 rgba(196, 30, 58, 0.4);
-    }
-    
-    .btn-romantic::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s ease;
-    }
-    
-    .btn-romantic:hover::before {
-      left: 100%;
-    }
-    
-    .btn-romantic:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 
-        0 20px 60px rgba(196, 30, 58, 0.4),
-        0 0 0 4px rgba(196, 30, 58, 0.2);
-    }
-    
-    .btn-romantic:active {
-      transform: translateY(0) scale(0.98);
-    }
-    
-    /* Letter Container */
-    .letter-container {
-      background: linear-gradient(145deg, rgba(255,245,238,0.05), rgba(255,245,238,0.02));
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      backdrop-filter: blur(20px);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .letter-container::before {
-      content: '';
-      position: absolute;
+
+    /* Floating Elements Container */
+    .floating-elements {
+      position: fixed;
       top: 0;
       left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-    
-    /* Photo Card */
-    .photo-card {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-    
-    .photo-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.8) 100%);
-      z-index: 1;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    
-    .photo-card:hover::before {
-      opacity: 1;
-    }
-    
-    .photo-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-    }
-    
-    .photo-card img {
-      transition: transform 0.6s ease;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
     }
-    
-    .photo-card:hover img {
-      transform: scale(1.1);
+
+    .float-item {
+      position: absolute;
+      animation: floatUp linear infinite;
+      opacity: 0.8;
+      font-size: 24px;
     }
-    
-    /* Confetti */
-    @keyframes confettiFall {
+
+    @keyframes floatUp {
       0% {
-        transform: translateY(-100vh) rotate(0deg);
-        opacity: 1;
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
       }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
       100% {
-        transform: translateY(100vh) rotate(720deg);
+        transform: translateY(-20vh) rotate(360deg);
         opacity: 0;
       }
     }
-    
-    .confetti {
+
+    /* Paper Plane Animation (Flying across) */
+    .paper-plane {
       position: fixed;
-      top: 0;
+      font-size: 30px;
+      animation: flyAcross 15s linear infinite;
+      z-index: 1;
       pointer-events: none;
-      z-index: 1000;
-      animation: confettiFall linear forwards;
+    }
+
+    @keyframes flyAcross {
+      0% {
+        transform: translate(-100px, 80vh) rotate(20deg);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% {
+        transform: translate(110vw, 10vh) rotate(20deg);
+        opacity: 0;
+      }
+    }
+
+    /* Card Style */
+    .cute-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 24px;
+      border: 2px solid #FF85A1;
+      box-shadow: 0 10px 25px rgba(255, 51, 102, 0.1);
+      position: relative;
+    }
+
+    /* Cute Tape Effect for Photos */
+    .photo-tape {
+      position: relative;
+      display: inline-block;
+    }
+    .photo-tape::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      width: 80px;
+      height: 30px;
+      background: rgba(255, 193, 7, 0.5);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+
+    /* Button Wiggle */
+    .btn-cute {
+      transition: all 0.3s ease;
+    }
+    .btn-cute:hover {
+      animation: wiggle 0.5s ease-in-out;
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-5deg) scale(1.05); }
+      75% { transform: rotate(5deg) scale(1.05); }
+    }
+
+    /* Heart Beat Animation */
+    .heart-beat {
+      animation: heartBeat 1.5s ease-in-out infinite;
     }
     
-    /* Hidden state for scroll reveal */
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    /* Scroll Reveal */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
-    
-    /* Music Button */
-    .music-btn {
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #FFE4EC; }
+    ::-webkit-scrollbar-thumb { background: #FF85A1; border-radius: 10px; }
+
+    /* Audio Button */
+    .audio-btn {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 56px;
-      height: 56px;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      background: var(--card);
-      border: 1px solid var(--border);
+      background: white;
+      border: 2px solid #FF85A1;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       z-index: 100;
-      transition: all 0.3s ease;
+      cursor: pointer;
+      transition: transform 0.3s;
     }
-    
-    .music-btn:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      transform: scale(1.1);
-    }
-    
-    .music-btn.playing .bar {
-      animation: musicBar 0.5s ease-in-out infinite alternate;
-    }
-    
-    .music-btn .bar {
-      width: 3px;
-      background: var(--fg);
-      margin: 0 1px;
-      border-radius: 2px;
-    }
-    
-    .music-btn .bar:nth-child(1) { height: 8px; animation-delay: 0s; }
-    .music-btn .bar:nth-child(2) { height: 16px; animation-delay: 0.1s; }
-    .music-btn .bar:nth-child(3) { height: 12px; animation-delay: 0.2s; }
-    .music-btn .bar:nth-child(4) { height: 18px; animation-delay: 0.3s; }
-    
-    @keyframes musicBar {
-      from { height: 8px; }
-      to { height: 20px; }
-    }
-    
-    /* Cursor Heart Trail */
-    .cursor-heart {
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0;
-      animation: cursorHeartAnim 1s ease-out forwards;
-    }
-    
-    @keyframes cursorHeartAnim {
-      0% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(0) translateY(-50px);
-      }
-    }
-    
-    /* Reduced Motion */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
+    .audio-btn:hover { transform: scale(1.1); }
+    .audio-icon { font-size: 20px; }
   </style>
 </head>
-<body>
-  <!-- Floating Hearts Container -->
-  <div id="hearts-container"></div>
-  
-  <!-- Background Glow Orbs -->
-  <div class="glow-orb" style="width: 600px; height: 600px; background: radial-gradient(circle, rgba(196,30,58,0.3), transparent); top: -200px; left: -200px;"></div>
-  <div class="glow-orb" style="width: 500px; height: 500px; background: radial-gradient(circle, rgba(139,21,56,0.25), transparent); bottom: -100px; right: -150px; animation-delay: 4s;"></div>
-  <div class="glow-orb" style="width: 400px; height: 400px; background: radial-gradient(circle, rgba(212,165,116,0.15), transparent); top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 2s;"></div>
-  
+<body class="bg-pink-light">
+
+  <!-- Background Pattern -->
+  <div class="bg-pattern"></div>
+
+  <!-- Floating Elements (Hearts, Chocolates, etc) -->
+  <div id="floating-container" class="floating-elements"></div>
+
+  <!-- Paper Plane -->
+  <div class="paper-plane" style="top: 20%; animation-delay: 2s;">✈️</div>
+  <div class="paper-plane" style="top: 50%; animation-delay: 8s;">✈️</div>
+
+  <!-- Audio -->
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Audio Button -->
+  <button id="audio-btn" class="audio-btn">
+    <span id="audio-icon" class="audio-icon">🔊</span>
+  </button>
+
   <!-- Main Content -->
-  <main id="main-content" class="relative z-10">
+  <main class="relative z-10">
     
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex flex-col justify-center items-center px-6 relative">
+    <section id="hero" class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+      <div class="heart-beat text-7xl mb-6">💌</div>
       
-      <!-- Decorative Elements -->
-      <div class="absolute top-20 left-10 opacity-20">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="text-rose-warm">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-        </svg>
-      </div>
-      <div class="absolute bottom-32 right-16 opacity-20">
-        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="text-gold-soft">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-        </svg>
-      </div>
+      <h1 class="font-script text-5xl md:text-7xl text-pink-deep mb-4">
+        Hai Arini Khansa Mufidah
+      </h1>
       
-      <!-- Main Title -->
-      <div class="text-center max-w-4xl">
-        <p class="font-body text-xl md:text-2xl text-rose-soft mb-6 tracking-widest uppercase opacity-0" id="subtitle">
-          Sebuah Ungkapan Hati
-        </p>
-        
-        <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 opacity-0" id="main-title">
-          <span class="block bg-gradient-to-r from-rose-blush via-rose-warm to-gold-soft bg-clip-text text-transparent">
-            Untuk
-          </span>
-          <span class="block mt-2 bg-gradient-to-r from-gold-soft via-rose-warm to-rose-blush bg-clip-text text-transparent">
-            Arini Khansa Mufidah
-          </span>
-        </h1>
-        
-        <p class="font-body text-xl md:text-2xl text-muted mb-12 opacity-0" id="tagline" style="color: var(--muted);">
-          Di hari yang penuh cinta ini, izinkan aku berbagi sekelumit perasaan...
-        </p>
-        
-        <!-- Open Letter Button -->
-        <button id="open-btn" class="btn-romantic opacity-0" aria-label="Buka surat cinta">
-          <span class="relative z-10 flex items-center gap-3">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
-            Buka Surat Cinta
-          </span>
-        </button>
-      </div>
+      <p class="font-body text-lg md:text-xl text-pink-medium mb-10 max-w-md">
+        Aku punya sesuatu yang spesial untukmu... 🥰
+      </p>
       
-      <!-- Scroll Indicator -->
-      <div id="scroll-indicator" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 transition-opacity duration-500">
-        <div class="flex flex-col items-center gap-2 text-rose-soft opacity-60">
-          <span class="font-body text-sm tracking-wider">Scroll</span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="animate-bounce">
-            <path d="M12 5v14M19 12l-7 7-7-7"/>
-          </svg>
-        </div>
-      </div>
+      <button id="open-btn" class="btn-cute bg-pink-deep text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-pink-medium transition-colors">
+        💖 Buka Surat Cinta 💖
+      </button>
     </section>
-    
-    <!-- Letter Content (Hidden Initially) -->
+
+    <!-- Letter Content -->
     <div id="letter-content" class="hidden">
       
-      <!-- Romantic Intro -->
-      <section class="py-24 px-6">
-        <div class="max-w-3xl mx-auto">
-          <div class="letter-container p-8 md:p-14 reveal">
-            <div class="text-center mb-10">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="mx-auto text-rose-warm mb-6">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="currentColor" opacity="0.2"/>
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-              <h2 class="font-display text-3xl md:text-4xl font-bold text-rose-blush mb-4">
-                Manusia Favoritku
-              </h2>
-              <p class="font-body text-lg text-gold-soft italic">
-                dan kekasih hatiku
-              </p>
-            </div>
-            
-            <p class="font-body text-xl md:text-2xl leading-relaxed text-center text-rose-cream italic">
-              Selamat hari Valentine, sayang. Semoga kamu selalu bahagia. 
-              Aku buat ini khusus untukmu, dengan segenap cinta yang tulus dari hati.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Story Section -->
-      <section class="py-20 px-6">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-16 reveal">
-            <span class="bg-gradient-to-r from-rose-warm to-gold-soft bg-clip-text text-transparent">
-              Kisah Perjalanan Kita
-            </span>
-          </h2>
-          
-          <div class="letter-container p-8 md:p-16 reveal">
-            <div class="space-y-10">
-              <!-- Story Paragraphs -->
-              <div class="story-item opacity-0 translate-y-8 transition-all duration-700" data-delay="0">
-                <div class="flex items-start gap-4">
-                  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-rose-warm to-rose-deep flex items-center justify-center flex-shrink-0">
-                    <span class="font-display text-white font-bold">1</span>
-                  </div>
-                  <p class="font-body text-xl md:text-2xl leading-relaxed text-rose-cream italic">
-                    Aku dan kamu awal mulai dekat pada saat kita kelas 5 Aliyah. 
-                    Mulai dari di combalngin sama teman, sampai akhirnya bisa saling tau satu sama lain.
-                  </p>
-                </div>
-              </div>
-              
-              <div class="story-item opacity-0 translate-y-8 transition-all duration-700" data-delay="200">
-                <div class="flex items-start gap-4">
-                  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-rose-warm to-gold-soft flex items-center justify-center flex-shrink-0">
-                    <span class="font-display text-white font-bold">2</span>
-                  </div>
-                  <p class="font-body text-xl md:text-2xl leading-relaxed text-rose-cream italic">
-                    Enggak terasa yaa, sudah hampir 2 tahun sejak aku mulai ingin lebih kenal dengan kamu 
-                    dengan cara mengirimkan word pada saat itu. 
-                    Langkah kecil yang mengubah segalanya.
-                  </p>
-                </div>
-              </div>
-              
-              <div class="story-item opacity-0 translate-y-8 transition-all duration-700" data-delay="400">
-                <div class="flex items-start gap-4">
-                  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold-soft to-rose-warm flex items-center justify-center flex-shrink-0">
-                    <span class="font-display text-white font-bold">3</span>
-                  </div>
-                  <p class="font-body text-xl md:text-2xl leading-relaxed text-rose-cream italic">
-                    Dan hari ini adalah hari Valentine pertama kita yang bisa kita rayakan bersama. 
-                    Semoga kamu bisa senang dengan sedikit hadiah kecil yang dapat aku berikan.
-                  </p>
-                </div>
-              </div>
-              
-              <div class="story-item opacity-0 translate-y-8 transition-all duration-700" data-delay="600">
-                <div class="flex items-start gap-4">
-                  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-rose-deep to-rose-warm flex items-center justify-center flex-shrink-0">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                    </svg>
-                  </div>
-                  <p class="font-body text-xl md:text-2xl leading-relaxed text-rose-cream italic">
-                    Dan maaf, aku tidak bisa menemanimu secara langsung di hari Valentine ini. 
-                    Tapi ingat, jarak tidak pernah bisa mengurangi sebesar apa cintaku padamu.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Photo Gallery - UPDATED TO SHOW REAL PHOTOS -->
-      <section class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-16 reveal">
-            <span class="bg-gradient-to-r from-gold-soft to-rose-warm bg-clip-text text-transparent">
-              Momen Indah Kita
-            </span>
-          </h2>
-          
-          <div class="grid md:grid-cols-3 gap-8 reveal">
-            <!-- Foto 1 -->
-            <div class="photo-card aspect-[3/4] relative overflow-hidden group cursor-pointer">
-              <img src="/photos/foto1.jpg" alt="Kenangan Pertama" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-              <p class="absolute bottom-4 left-4 right-4 font-display text-xl text-white z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
-                Kenangan Pertama
-              </p>
-            </div>
-
-            <!-- Foto 2 -->
-            <div class="photo-card aspect-[3/4] relative overflow-hidden group cursor-pointer">
-              <img src="/photos/foto2.jpg" alt="Momen Bahagia" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-              <p class="absolute bottom-4 left-4 right-4 font-display text-xl text-white z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
-                Momen Bahagia
-              </p>
-            </div>
-
-            <!-- Foto 3 -->
-            <div class="photo-card aspect-[3/4] relative overflow-hidden group cursor-pointer">
-              <img src="/photos/foto3.jpg" alt="Cerita Kita" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-              <p class="absolute bottom-4 left-4 right-4 font-display text-xl text-white z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
-                Cerita Kita
-              </p>
-            </div>
-          </div>
-          
-          <p class="text-center mt-8 font-body text-lg text-muted reveal" style="color: var(--muted);">
-            Setiap foto menyimpan seribu kata
+      <!-- Intro -->
+      <section class="py-16 px-6 flex justify-center">
+        <div class="cute-card p-8 md:p-12 max-w-2xl text-center reveal">
+          <div class="absolute -top-4 -right-4 text-4xl">🌸</div>
+          <div class="absolute -bottom-4 -left-4 text-4xl">🌸</div>
+          <h2 class="font-script text-4xl text-pink-deep mb-4">Untuk Kasih Hatiku</h2>
+          <p class="font-body text-lg leading-relaxed">
+            Selamat Hari Valentine, Sayang! Semoga harimu secerah senyummu. Aku buat ini khusus buat kamu, dengan segenap cinta di setiap hurufnya.
           </p>
         </div>
       </section>
-      
-      <!-- Closing Section -->
-      <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-          <div class="reveal">
-            <h2 class="font-display text-6xl md:text-7xl lg:text-8xl font-bold mb-8">
-              <span class="bg-gradient-to-r from-rose-blush via-rose-warm to-gold-soft bg-clip-text text-transparent">
-                Happy Valentine
-              </span>
-            </h2>
-            
-            <h3 class="font-display text-4xl md:text-5xl font-bold mb-12">
-              <span class="bg-gradient-to-r from-gold-soft via-rose-warm to-rose-blush bg-clip-text text-transparent">
-                Sayangku
-              </span>
-            </h3>
-          </div>
+
+      <!-- Story Section -->
+      <section class="py-16 px-6">
+        <div class="max-w-3xl mx-auto space-y-12">
           
-          <div class="letter-container p-10 md:p-16 reveal">
-            <p class="font-body text-2xl md:text-3xl leading-relaxed text-rose-cream italic mb-8">
-              "I Love You, Always"
-            </p>
-            
-            <p class="font-body text-xl text-muted italic mb-10" style="color: var(--muted);">
-              Hari ini mungkin sederhana,<br>
-              tapi perasaanku ke kamu tidak pernah sederhana.
-            </p>
-            
-            <div class="flex justify-center gap-4">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-rose-warm animate-pulse">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-              </svg>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-gold-soft animate-pulse" style="animation-delay: 0.2s;">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-              </svg>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-rose-warm animate-pulse" style="animation-delay: 0.4s;">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-              </svg>
+          <div class="flex items-center gap-6 reveal">
+            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-pink-light flex items-center justify-center text-3xl shadow-md">
+              🎒
+            </div>
+            <div class="cute-card p-6 flex-1">
+              <h3 class="font-bold text-pink-deep text-xl mb-2">Awal Mula</h3>
+              <p class="text-gray-600">
+                Aku dan kamu mulai dekat saat kelas 5 Aliyah. Dari combalngin teman sampai akhirnya saling kenal. Saat itu adalah awal yang indah... 💕
+              </p>
             </div>
           </div>
+
+          <div class="flex items-center gap-6 reveal">
+            <div class="cute-card p-6 flex-1">
+              <h3 class="font-bold text-pink-deep text-xl mb-2">Langkah Kecil</h3>
+              <p class="text-gray-600">
+                Sudah hampir 2 tahun sejak aku kirim file Word itu. Langkah kecil yang mengubah hidupku jadi lebih berwarna.
+              </p>
+            </div>
+            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-pink-light flex items-center justify-center text-3xl shadow-md">
+              💌
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 reveal">
+            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-pink-light flex items-center justify-center text-3xl shadow-md">
+              🎁
+            </div>
+            <div class="cute-card p-6 flex-1">
+              <h3 class="font-bold text-pink-deep text-xl mb-2">Hari Ini</h3>
+              <p class="text-gray-600">
+                Ini Valentine pertama kita! Maaf aku gabisa temenin langsung, tapi cinta ini selalu dekat denganmu. Semoga kamu suka hadiah kecil ini! 🎁
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Photo Gallery (Scrapbook Style) -->
+      <section class="py-20 px-6 bg-white/50">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-script text-5xl text-center text-pink-deep mb-12 reveal">Momen Kita 📸</h2>
           
-          <!-- Signature -->
-          <div class="mt-16 reveal">
-            <p class="font-body text-xl text-muted italic" style="color: var(--muted);">
-              Dengan segenap cinta,
-            </p>
-            <p class="font-display text-3xl text-rose-soft mt-4 italic">
-              Yang selalu merindukanmu
-            </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 place-items-center">
+            
+            <!-- Foto 1 -->
+            <div class="photo-tape reveal" style="transform: rotate(-3deg);">
+              <img src="foto1.jpg" alt="Foto 1" class="w-64 h-80 object-cover border-4 border-white shadow-xl">
+              <div class="absolute -bottom-4 right-0 text-3xl transform rotate-12">💖</div>
+            </div>
+
+            <!-- Foto 2 -->
+            <div class="photo-tape reveal mt-10 md:mt-0" style="transform: rotate(2deg);">
+              <img src="foto2.jpg" alt="Foto 2" class="w-64 h-80 object-cover border-4 border-white shadow-xl">
+              <div class="absolute -top-6 -left-4 text-3xl transform -rotate-12">✨</div>
+            </div>
+
+            <!-- Foto 3 -->
+            <div class="photo-tape reveal" style="transform: rotate(-2deg);">
+              <img src="foto3.jpg" alt="Foto 3" class="w-64 h-80 object-cover border-4 border-white shadow-xl">
+              <div class="absolute -bottom-4 -left-4 text-3xl transform rotate-6">🍫</div>
+            </div>
+
           </div>
         </div>
       </section>
-      
+
+      <!-- Closing -->
+      <section class="py-24 px-6 text-center">
+        <div class="reveal">
+          <h2 class="font-script text-6xl text-pink-deep mb-6">Happy Valentine!</h2>
+          <p class="text-xl text-gray-600 mb-4">I Love You, Always 💕</p>
+          <div class="text-5xl space-x-2 mt-6">
+            <span>🍬</span>
+            <span>🍭</span>
+            <span class="heart-beat">💘</span>
+            <span>🍭</span>
+            <span>🍬</span>
+          </div>
+        </div>
+      </section>
+
       <!-- Footer -->
-      <footer class="py-10 text-center border-t border-white/5">
-        <p class="font-body text-muted text-sm" style="color: var(--muted);">
-          Dibuat dengan cinta untuk Arini Khansa Mufidah
-        </p>
+      <footer class="py-8 text-center text-pink-medium text-sm border-t border-pink-light">
+        Made with 💖 just for you.
       </footer>
+
     </div>
   </main>
-  
-  <!-- Music Button (Optional) -->
-  <button class="music-btn" id="music-btn" aria-label="Toggle musik">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </button>
 
   <script>
-    // Initialize variables first
-    const heartsContainer = document.getElementById('hearts-container');
+    // --- Elements ---
     const openBtn = document.getElementById('open-btn');
-    const letterContent = document.getElementById('letter-content');
     const hero = document.getElementById('hero');
-    const scrollIndicator = document.getElementById('scroll-indicator');
-    const musicBtn = document.getElementById('music-btn');
+    const letterContent = document.getElementById('letter-content');
+    const audio = document.getElementById('bg-music');
+    const audioBtn = document.getElementById('audio-btn');
+    const audioIcon = document.getElementById('audio-icon');
+    const floatContainer = document.getElementById('floating-container');
     
-    let isOpen = false;
-    let musicPlaying = false;
+    let isPlaying = false;
+
+    // --- Generate Floating Elements ---
+    const emojis = ['❤️', '💕', '💖', '💗', '💘', '💝', '🍫', '🌹', '🎀', '✨'];
     
-    // Reduced motion check
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    // Floating Hearts
-    function createFloatingHeart() {
-      if (prefersReducedMotion) return;
+    function createFloatingElement() {
+      const el = document.createElement('div');
+      el.className = 'float-item';
+      el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
       
-      const heart = document.createElement('div');
-      heart.className = 'floating-heart';
+      // Random position and duration
+      const x = Math.random() * 100; // vw
+      const duration = Math.random() * 10 + 10; // 10-20s
+      const size = Math.random() * 20 + 15; // font size
       
-      const size = Math.random() * 20 + 15;
-      const left = Math.random() * 100;
-      const duration = Math.random() * 10 + 12;
-      const delay = Math.random() * 5;
-      const hue = Math.random() > 0.5 ? '340' : '30';
+      el.style.left = `${x}vw`;
+      el.style.animationDuration = `${duration}s`;
+      el.style.fontSize = `${size}px`;
       
-      heart.style.cssText = `
-        left: ${left}%;
-        font-size: ${size}px;
-        color: hsl(${hue}, 70%, 60%);
-        animation: ${Math.random() > 0.5 ? 'floatHeart' : 'floatHeartAlt'} ${duration}s linear ${delay}s infinite;
-      `;
+      floatContainer.appendChild(el);
       
-      heart.innerHTML = `
-        <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-        </svg>
-      `;
-      
-      heartsContainer.appendChild(heart);
+      // Remove after animation
+      setTimeout(() => {
+        el.remove();
+      }, duration * 1000);
     }
-    
-    // Create initial hearts
-    if (!prefersReducedMotion) {
-      for (let i = 0; i < 20; i++) {
-        setTimeout(() => createFloatingHeart(), i * 500);
+
+    // Create initial batch
+    for(let i=0; i<15; i++) {
+      setTimeout(createFloatingElement, i * 500);
+    }
+    // Keep creating
+    setInterval(createFloatingElement, 1000);
+
+    // --- Audio Control ---
+    function toggleMusic() {
+      if (isPlaying) {
+        audio.pause();
+        audioIcon.innerText = '🔇';
+      } else {
+        audio.play();
+        audioIcon.innerText = '🔊';
       }
-      setInterval(createFloatingHeart, 2000);
+      isPlaying = !isPlaying;
     }
-    
-    // Confetti burst
-    function createConfetti() {
-      if (prefersReducedMotion) return;
-      
-      const colors = ['#C41E3A', '#D4A574', '#E8B4B8', '#8B1538', '#FADADD'];
-      const shapes = ['heart', 'circle', 'square'];
-      
-      for (let i = 0; i < 50; i++) {
-        const confetti = document.createElement('div');
-        confetti.className = 'confetti';
-        
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        const shape = shapes[Math.floor(Math.random() * shapes.length)];
-        const size = Math.random() * 10 + 5;
-        const left = Math.random() * 100;
-        const duration = Math.random() * 3 + 2;
-        
-        confetti.style.cssText = `
-          left: ${left}%;
-          width: ${size}px;
-          height: ${size}px;
-          background: ${color};
-          border-radius: ${shape === 'circle' ? '50%' : shape === 'heart' ? '0' : '2px'};
-          animation-duration: ${duration}s;
-        `;
-        
-        if (shape === 'heart') {
-          confetti.innerHTML = `
-            <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="${color}">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
-          `;
-          confetti.style.background = 'transparent';
-        }
-        
-        document.body.appendChild(confetti);
-        
-        setTimeout(() => confetti.remove(), duration * 1000);
-      }
-    }
-    
-    // Entrance animations
-    function animateEntrance() {
-      const subtitle = document.getElementById('subtitle');
-      const mainTitle = document.getElementById('main-title');
-      const tagline = document.getElementById('tagline');
-      const openBtn = document.getElementById('open-btn');
-      
-      setTimeout(() => {
-        subtitle.style.transition = 'opacity 1s ease, transform 1s ease';
-        subtitle.style.opacity = '1';
-        subtitle.style.transform = 'translateY(0)';
-      }, 300);
-      
-      setTimeout(() => {
-        mainTitle.style.transition = 'opacity 1.2s ease, transform 1.2s ease';
-        mainTitle.style.opacity = '1';
-        mainTitle.style.transform = 'translateY(0)';
-      }, 600);
-      
-      setTimeout(() => {
-        tagline.style.transition = 'opacity 1s ease, transform 1s ease';
-        tagline.style.opacity = '1';
-        tagline.style.transform = 'translateY(0)';
-      }, 1000);
-      
-      setTimeout(() => {
-        openBtn.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        openBtn.style.opacity = '1';
-        openBtn.style.transform = 'translateY(0)';
-      }, 1400);
-    }
-    
-    // Initialize entrance
-    animateEntrance();
-    
-    // Open letter
+
+    audioBtn.addEventListener('click', toggleMusic);
+
+    // --- Open Letter Logic ---
     openBtn.addEventListener('click', () => {
-      if (isOpen) return;
-      isOpen = true;
+      // Play music
+      if (!isPlaying) {
+        toggleMusic();
+      }
+
+      // Animation
+      hero.style.transition = 'all 0.8s ease';
+      hero.style.opacity = '0';
+      hero.style.transform = 'scale(0.9)';
       
-      // Create confetti burst
-      createConfetti();
-      
-      // Hide hero elements with fade
-      const heroElements = hero.querySelectorAll('p, h1, button');
-      heroElements.forEach((el, i) => {
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(-30px)';
-      });
-      
-      // Show letter content
       setTimeout(() => {
         hero.style.display = 'none';
         letterContent.classList.remove('hidden');
         letterContent.style.opacity = '0';
-        letterContent.style.transform = 'translateY(30px)';
         
         setTimeout(() => {
-          letterContent.style.transition = 'opacity 1s ease, transform 1s ease';
+          letterContent.style.transition = 'opacity 1s ease';
           letterContent.style.opacity = '1';
-          letterContent.style.transform = 'translateY(0)';
-          
-          // Initialize scroll reveal
+          window.scrollTo(0, 0);
           initScrollReveal();
-          
-          // Show scroll indicator
-          scrollIndicator.style.opacity = '1';
         }, 100);
-        
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 600);
+      }, 800);
     });
-    
-    // Scroll reveal
+
+    // --- Scroll Reveal ---
     function initScrollReveal() {
-      const revealElements = document.querySelectorAll('.reveal');
-      const storyItems = document.querySelectorAll('.story-item');
+      const reveals = document.querySelectorAll('.reveal');
       
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -903,82 +450,10 @@
           }
         });
       }, { threshold: 0.1 });
-      
-      revealElements.forEach(el => observer.observe(el));
-      
-      // Story items with stagger
-      const storyObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const delay = parseInt(entry.target.dataset.delay) || 0;
-            setTimeout(() => {
-              entry.target.style.opacity = '1';
-              entry.target.style.transform = 'translateY(0)';
-            }, delay);
-          }
-        });
-      }, { threshold: 0.2 });
-      
-      storyItems.forEach(el => storyObserver.observe(el));
+
+      reveals.forEach(el => observer.observe(el));
     }
-    
-    // Cursor heart trail
-    let lastHeartTime = 0;
-    document.addEventListener('mousemove', (e) => {
-      if (prefersReducedMotion) return;
-      
-      const now = Date.now();
-      if (now - lastHeartTime < 100) return;
-      lastHeartTime = now;
-      
-      if (Math.random() > 0.7) {
-        const heart = document.createElement('div');
-        heart.className = 'cursor-heart';
-        heart.style.cssText = `
-          left: ${e.clientX}px;
-          top: ${e.clientY}px;
-          color: ${Math.random() > 0.5 ? '#C41E3A' : '#D4A574'};
-        `;
-        heart.innerHTML = `
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-          </svg>
-        `;
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 1000);
-      }
-    });
-    
-    // Music toggle (placeholder - add your own audio)
-    musicBtn.addEventListener('click', () => {
-      musicPlaying = !musicPlaying;
-      musicBtn.classList.toggle('playing', musicPlaying);
-      
-      // Add your audio logic here
-      // const audio = document.getElementById('bg-music');
-      // if (musicPlaying) audio.play();
-      // else audio.pause();
-    });
-    
-    // Keyboard accessibility
-    openBtn.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openBtn.click();
-      }
-    });
-    
-    // Touch device optimization
-    if ('ontouchstart' in window) {
-      document.querySelectorAll('.photo-card').forEach(card => {
-        card.addEventListener('touchstart', function() {
-          this.style.transform = 'scale(0.98)';
-        });
-        card.addEventListener('touchend', function() {
-          this.style.transform = '';
-        });
-      });
-    }
+
   </script>
 </body>
 </html>
